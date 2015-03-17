@@ -13,9 +13,9 @@ public class Main {
             xVals[i] = scanner.nextDouble();
             yVals[i] = scanner.nextDouble();
         }
-        double correlation = Correlation.correlate(xVals, yVals);
-        double distribution = .5d + SimRule.integral(0d, correlation, new SimRule.NormDist(), .000000001d, n);
-        System.out.println(correlation);
-        System.out.println(distribution);
+        double r = Correlation.correlate(xVals, yVals);
+        double t = Correlation.significance(r, n);
+        System.out.println(r);
+        System.out.println(t);
     }
 }

@@ -25,4 +25,8 @@ public class Correlation {
 
         return num / Math.sqrt(den1*den2);
     }
+
+    public static double significance (double r, int n) {
+        return Math.abs(r)*Math.sqrt(n-2)/Math.sqrt(1-r*r);
+    }
 }
